@@ -121,7 +121,7 @@ class Person:
             self.currhp = self.maxhp
 
     def choose_action(self):
-        choice = 1;
+        choice = 1
         print(ncolor.BLUE + nformat.BOLD + "Actions:" + nformat.EBOLD + ncolor.ENDC)
         for item in self.actions:
             print(str(choice) + ":", item)

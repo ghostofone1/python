@@ -52,11 +52,12 @@ while running:
             player.reduce_mp(cost)
             player.heal(magic_dmg)
             print(ncolor.BLUE + "\n" + spell.get_spellname() + " heals", str(magic_dmg),
-                  "points of health!\n" + ncolor.ENDC)
+                  "points of health!\n" + ncolor.ENDC)   
 
     if bad_guy.get_hp() == 0:
-        print(nformat.BOLD + ncolor.GREEN + "You won!" + ncolor.ENDC + nformat.EBOLD)
+        print(nformat.BOLD + ncolor.GREEN + "You won!\n" + ncolor.ENDC + nformat.EBOLD)
         running = False
+        break
 
     dmg = bad_guy.calc_atk_damage()
     player.take_damage(dmg)
@@ -64,8 +65,10 @@ while running:
     if player.get_hp() == 0:
         print(ncolor.RED + nformat.BOLD + bad_guy.get_name() + ncolor.ENDC + nformat.EBOLD + " deals", str(dmg),
               "points of damage, killing " + ncolor.GREEN + nformat.BOLD + player.get_name() + ncolor.ENDC + nformat.EBOLD + "!\n")
-        print(nformat.BOLD + ncolor.RED + "You lost!" + ncolor.ENDC + nformat.EBOLD)
+        print(nformat.BOLD + ncolor.RED + "You lost!\n" + ncolor.ENDC + nformat.EBOLD)
         running = False
+        break
     else:
         print(ncolor.RED + nformat.BOLD + bad_guy.get_name() + ncolor.ENDC + nformat.EBOLD + " deals", str(dmg),
               "points of damage!\n")
+
